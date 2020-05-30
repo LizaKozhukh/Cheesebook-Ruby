@@ -1,0 +1,29 @@
+
+
+<div class="introCheese">
+    <div class="contentCheese">
+
+        <div class="img-div">
+            <%# img class="cheese-img" [src]="cheese?.image" height="180px" alt="Cheesebook" > %>
+        </div>
+        <div class="post">
+            <h1 class="post-title">
+                <%= @post.title %>
+                <div>
+                    <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-warning'%>
+                    <%= link_to "Delete", post_path(@post), :method => :delete, data: {confirm: "Do you want to delete the post?"}, :class => 'btn btn-danger'%>
+                </div>
+            </h1>
+            <article><%= @post.body %></article>
+        </div>
+        <div class="comments">
+            <h4>Add Comment</h4>
+            <%= render 'comments/form' %>
+
+            <h4>All Comments</h4>
+            <%= render @post.comments %>
+            
+        </div>
+    </div>
+</div>
+

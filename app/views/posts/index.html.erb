@@ -1,0 +1,31 @@
+<div class="intro">
+      <div class="intro-inner">
+          <h1>Love cheese?</h1>
+          <p>Here you will learn the history and methods of making the best cheeses.</p>
+          <div class="cheeseimg">
+              <p>Welcome! =)</p>
+              <img id="cheese-img" src="https://i.ibb.co/34CK2xF/intro-cheese.png" height="180px" alt="Cheesebook" >
+          </div>    
+      </div>     
+</div>
+
+<div class="content">
+    <div class="cardList">
+    <% @post.each do |post| %>
+            <div class="card">
+                <h3 class="name"><%= post.title %></h3>
+                <div class="card-img-div">
+                    <%# <img class="card-img" [src]='cheese.image' alt="cheese"> %>
+                </div>
+                <p class="description"><%=post.body%></p>
+                <div><%= link_to "Read more", post_path(post), :class => 'btn btn-outline-warning' %></div>
+            </div>
+    <% end %>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <img class="logo" src="https://i.ibb.co/RgwwmkM/logo.png" height="100px" alt="Cheesebook">
+    <h3>Made by: <a href="https://github.com/LizaKozhukh">@atless</a></h3>
+</footer>

@@ -1,0 +1,311 @@
+
+@keyframes appearing {
+    50% {opacity: 0; }
+    100% {opacity: 1;}
+}
+
+@keyframes fadeOnTop {
+    0% { transform:translate(0,-100%); opacity:0 }  
+    100% { transform:translate(0,0); opacity:1 }
+}
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+body{
+    margin: 0;
+    font: 18px/1.72 'Neucha', sans-serif;
+    min-width: 320px;
+    background-color: #fbcd91;
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+}
+
+a,
+button{
+    cursor: pointer;
+}
+
+
+.header, .header:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header {
+    position: fixed;
+    font-size: 70px;
+    color: #fbcd91;
+    z-index: 1000;
+    animation: fadeOnTop 1s 1 0s forwards;
+}
+
+.header:before {
+    content: '';
+    height: 140px;
+    display: block;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(15, 9, 0, 1) 0%, rgba(15, 9, 0,.7) 70%, rgba(15, 9, 0, 0) 100%);
+}
+
+.content-container {
+    margin: 30px auto 0;
+    padding: 0 20px;
+    max-width: 1232px;
+    width: 100%;
+}
+
+.grid-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logo {
+    transition: .2s;
+}
+
+.logo:hover {
+    transform: scale(1.08);
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.navLink {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fbcd91;
+    font: 700 25px/1.4 'Neucha', sans-serif;
+    margin: 0 20px;
+    transition: .2s;
+}
+
+.navLink:hover {
+    color: rgb(255, 165, 20);
+}
+
+
+
+.intro { 
+    min-height: 1000px;
+    display: flex;
+    align-items: center;
+    background: #ff9302 url("https://i.ibb.co/YhCdMPr/cheese-platter.jpg") center /cover no-repeat;
+    transition: .1s;
+}
+
+.intro-inner {
+    text-shadow: 1px 1px 1px rgb(167, 137, 122), 0 0 1em rgb(165, 109, 57);
+    background: url("https://i.ibb.co/9prWsgX/intro-top.png") no-repeat;
+    margin: 0 auto 0 20%;
+    width: 650px;
+    height: 450px;
+    font: 18px/1.72 'Neucha', sans-serif;
+    font-size: 40px;
+    padding: 20px;
+    color: #ffecd3;
+    letter-spacing: 3px;
+    transition: .1s;
+    opacity: 0;
+    animation: appearing 1s 1 0s forwards;
+}
+
+.intro-inner>p{
+    padding: 10px;
+    line-height: 40px;
+    font-weight: 700;
+}
+
+.intro-inner>h1{
+    padding: 10px;
+    font: 2em 'Neucha', sans-serif;
+    line-height: 40px;
+    font-weight: bolder;
+}
+
+.intro .cheeseimg{
+    display: flex;
+    justify-content: space-between;
+}
+
+#cheese-img{
+    animation: appearing 2s 1 0s forwards;
+}
+
+.content{
+    min-height: 1200px;
+    background: #ff9302 url("https://i.ibb.co/jrCQRmV/intro2-background.jpg");
+}
+
+.footer{
+    background-color: #ac4306;
+    color: #ffecd3;
+    min-height: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer>h3>a{
+    color: #ffecd3;
+    transition: .1s;
+}
+
+.footer>h3>a:hover{
+    color: #fcb251;
+}
+
+
+
+.cardList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{ 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 5px;
+    padding: 15px;
+    background-color:  #fff0ce !important;
+    max-width: 25em;
+    height: auto;
+    text-decoration: none;
+    transition: .2s;
+    min-width: 14em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+.card:hover .card-img{
+    transform: scale(1.1);
+    opacity: 0.9;
+    filter: brightness(110%);
+}
+
+.card-img-div{
+    width: 100%;
+    height: 100%;
+    max-height: 18em;
+    overflow: hidden;
+}
+
+.card-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+
+.description{
+    white-space: nowrap;
+    overflow: hidden;
+    padding-bottom:10%;
+    margin: 0;
+    text-overflow: ellipsis;
+}
+
+.name{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+
+
+.introCheese { 
+    min-height: 1000px;
+    display: flex;
+    justify-content: center;
+    background: #ff9302 url("https://i.ibb.co/jrCQRmV/intro2-background.jpg");
+}
+
+.contentCheese{
+    box-shadow: 0 0 5em rgba(0,0,0,0.5);
+    background-color: antiquewhite;
+    max-width: 80em;
+    width: 100%;
+    padding: 5%;
+    padding-top: 8em;
+    opacity: 0;
+    animation: fadeOnTop 1s 1 0s forwards;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.post-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-div{
+    max-height: 30em;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.cheese-img{
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.cheese-img:hover{
+    filter: brightness(110%);
+    transform: scale(1.1);
+}
+
+article{
+    font-size: larger;
+    text-align: justify;
+    height: 100%;
+}
+
+.contentCheese > p{
+    font-size: x-large;
+    text-decoration-line: underline;
+}
