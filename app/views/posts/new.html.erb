@@ -4,7 +4,7 @@
 <div class="introCheese">
     <div class="contentCheese">
         <h4>New post</h4>
-        <%= form_with scope: :post, url: posts_path, local: true do |f| %>
+        <%= form_for :post, url: posts_path, local: true do |f| %>
             <% if @post.errors.any? %>
                 <% @post.errors.full_messages.each do |err| %>
                     <div class="alert alert-danger"><%= err %></div>
