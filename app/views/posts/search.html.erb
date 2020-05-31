@@ -14,6 +14,9 @@
     <% @post.each do |post| %>
             <div class="card">
                 <h3 class="name"><%= post.title %></h3>
+                <div class="card-img-div">
+                    <%# <img class="card-img" [src]='cheese.image' alt="cheese"> %>
+                </div>
                 <%=raw post.body%>
                 <div><%= link_to "Read more", post_path(post), :class => 'btn btn-outline-warning' %></div>
             </div>

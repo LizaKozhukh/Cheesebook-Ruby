@@ -15,6 +15,10 @@ class PostsController < ApplicationController
         
     end
 
+    def search
+        @post = Post.where("title LIKE ?", "%" + params[:q] + "%")
+    end
+
     def edit
         @post = Post.find(params[:id])
     end

@@ -1,3 +1,7 @@
+//*= require trix
+
+
+
 
 @keyframes appearing {
     50% {opacity: 0; }
@@ -193,16 +197,22 @@ button{
     margin: 10px 5px;
     padding: 15px;
     background-color:  #fff0ce !important;
-    max-width: 25em;
-    height: auto;
+    max-height: 28em;
     text-decoration: none;
     transition: .2s;
     min-width: 14em;
+    max-width: 28em;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .card:hover{
     box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+.card > p {
+    overflow: hidden;
+    padding-bottom:10%;
+    margin: 0;
 }
 
 .card:hover .card-img{
@@ -228,11 +238,11 @@ button{
 
 
 .description{
-    white-space: nowrap;
+
     overflow: hidden;
     padding-bottom:10%;
     margin: 0;
-    text-overflow: ellipsis;
+
 }
 
 .name{

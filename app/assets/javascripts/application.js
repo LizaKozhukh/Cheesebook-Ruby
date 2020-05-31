@@ -12,4 +12,7 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require trix
 //= require_tree .
+
+Trix.config.blockAttributes.default.tagName = "p"

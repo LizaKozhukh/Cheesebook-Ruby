@@ -14,7 +14,7 @@
                     <%= link_to "Delete", post_path(@post), :method => :delete, data: {confirm: "Do you want to delete the post?"}, :class => 'btn btn-danger'%>
                 </div>
             </h1>
-            <article><%= @post.body %></article>
+            <article><%= sanitize @post.body %></article>
         </div>
         <div class="comments">
             <h4>Add Comment</h4>

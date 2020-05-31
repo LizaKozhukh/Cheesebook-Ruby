@@ -1,8 +1,9 @@
+<% if comment.username %>
 <div class="alert alert-light">
     <p><strong><%= comment.username %></strong></p>
     <p><%= comment.body %></p>
     <p> 
         <%= link_to 'Delete', [comment.post, comment], method: :delete %>
     </p>
-    <hr>
 </div>
+<% end %>
